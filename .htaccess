@@ -1,0 +1,6 @@
+# Redirect 404s to the home page
+RewriteEngine On
+RewriteBase /undercity/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /undercity/ [L,R=302]

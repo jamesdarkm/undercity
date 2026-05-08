@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://serv2.darkm.co/undercity/sitemap.xml
