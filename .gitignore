@@ -1,0 +1,22 @@
+# Backup snapshots
+*.bak-*
+
+# Figma exports / design data
+all-image-fills.json
+design-spec.json
+desktop-full.json
+desktop-texts.json
+figma-frames.json
+figma-images.json
+figma-raw.json
+image-refs.json
+mobile-full.json
+
+# Scratch
+try/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

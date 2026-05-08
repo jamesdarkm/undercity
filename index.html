@@ -1,0 +1,627 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNDERCITY — Level up your collection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lemon&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/lemon-milk" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="icon" href="assets/images/favicon.png" sizes="32x32" />
+  <link rel="stylesheet" href="./styles.css">
+  <script>
+    // Pick hero banner by time-of-day + viewport, preload it before paint.
+    (function () {
+      var h = new Date().getHours();
+      var slot = (h >= 5 && h < 11)  ? 'morning'
+               : (h >= 11 && h < 15) ? 'midday'
+               : (h >= 15 && h < 18) ? 'dusk'
+               : 'evening';
+      var isMobile = window.matchMedia && window.matchMedia('(max-width: 767px)').matches;
+      var map = {
+        morning:       './assets/images/morning.png',
+        morningMobile: './assets/images/morning-mobile.png',
+        midday:        './assets/images/midday.png',
+        middayMobile:  './assets/images/midday-mobile.png',
+        dusk:          './assets/images/dusk.png',
+        duskMobile:    './assets/images/dusk-mobile.png',
+        evening:       './assets/images/evening.png',
+        eveningMobile: './assets/images/mobile-night.png'
+      };
+      var url = map[isMobile ? slot + 'Mobile' : slot] || map[slot];
+      window.__heroBannerURL = url;
+      document.documentElement.setAttribute('data-hero-slot', slot);
+      var link = document.createElement('link');
+      link.rel = 'preload'; link.as = 'image'; link.href = url;
+      document.head.appendChild(link);
+    })();
+  </script>
+</head>
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header class="site-header" id="top">
+  <div class="site-header__inner">
+    <a href="#" class="site-header__logo">
+      <img src="./assets/images/logo.png" alt="Undercity" class="logo-img">
+    </a>
+    <nav class="site-header__nav">
+      <a href="#features-glance" class="nav-link nav-link--active">Features</a>
+      <a href="#showcase" class="nav-link">Showcase</a>
+      <a href="#testimonials" class="nav-link">Testimonials</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+    <button class="hamburger" id="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="#features-glance">Features</a>
+    <a href="#showcase">Showcase</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="hero">
+  <div class="hero__bg">
+    <img id="hero-bg-img"
+         data-banner="hero"
+         data-morning="./assets/images/morning.png"
+         data-morning-mobile="./assets/images/morning-mobile.png"
+         data-midday="./assets/images/midday.png"
+         data-midday-mobile="./assets/images/midday-mobile.png"
+         data-dusk="./assets/images/dusk.png"
+         data-dusk-mobile="./assets/images/dusk-mobile.png"
+         data-evening="./assets/images/evening.png"
+         data-evening-mobile="./assets/images/mobile-night.png"
+         alt="" aria-hidden="true">
+    <script>
+      (function(){var i=document.getElementById('hero-bg-img'); if(i&&window.__heroBannerURL)i.src=window.__heroBannerURL;})();
+    </script>
+    <noscript>
+      <img src="./assets/images/morning.png" alt="" aria-hidden="true" style="width:100%;height:100%;object-fit:cover;object-position:center top;position:absolute;inset:0;">
+    </noscript>
+  </div>
+  <div class="hero__inner wrap">
+    <div class="hero__splash" aria-hidden="false">
+      <p class="hero__splash-tagline">SEEK. CLAIM. TREASURE. TRADE</p>
+      <button type="button" class="hero__scroll" aria-label="Scroll to content">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="hero__copy">
+      <h1 class="hero__title"><strong>Level up</strong> your collection</h1>
+      <p class="hero__sub">Collect What You Love. Trade What You Don't. Discover What's Next.</p>
+      <p class="hero__body">Welcome to the ultimate space for collectors - where passion meets possibility. Whether you're hunting for rare finds, trading duplicates, or building your dream collection, everything you need lives in one place.</p>
+      <div class="badge-row">
+        <a href="https://apps.apple.com/za/app/undercity/id6760612279" class="badge"><img src="./assets/images/playstore-badge.png" alt="Google Play"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.undercity.app&hl=en_ZA" class="badge"><img src="./assets/images/appstore-badge.png" alt="App Store"></a>
+      </div>
+    </div>
+    <div class="hero__phone">
+      <div class="css-phone">
+        <div class="css-phone__shell">
+          <div class="css-phone__screen">
+            <img src="./assets/images/app in phone.png" alt="Undercity app">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRADE WITH COLLECTORS ===================== -->
+<section class="trade section" id="showcase">
+  <div class="trade__inner wrap">
+	<img src="./assets/images/cards.png" alt="Jake">
+    <!-- Left: Collector cards fan -->
+    <div class="trade__demo" style="display:none;">
+		
+      <!-- Three stacked collector cards -->
+      <div class="cc-stage">
+        <!-- Jake — back left -->
+        <div class="cc cc--left">
+          <div class="cc__top">
+            <div class="cc__av"><img src="./assets/images/c9a6d908e4a2cbaa065a51808d9c52ce07e3a747.png" alt="Jake"></div>
+            <div class="cc__info">
+              <div class="cc__name">Jake</div>
+              <div class="cc__handle">@jake_collector</div>
+              <div class="cc__loc">Pretoria, ZA</div>
+            </div>
+          </div>
+          <div class="cc__stats">
+            <div class="stat"><span class="stat__v">500</span><span class="stat__l">followers</span></div>
+            <div class="stat stat--blue"><span class="stat__v">1,500</span><span class="stat__l">collectors rating</span></div>
+            <div class="stat"><span class="stat__v">5</span><span class="stat__l">following</span></div>
+          </div>
+          <div class="cc__items">
+            <div class="item"><span class="item__v">800</span><span class="item__l">ITEMS</span></div>
+            <div class="item"><span class="item__v">15</span><span class="item__l">COLLECTION</span></div>
+            <div class="item"><span class="item__v">5</span><span class="item__l">AUCTIONS</span></div>
+          </div>
+        </div>
+
+        <!-- Anwar — front center -->
+        <div class="cc cc--center">
+          <div class="cc__top cc__top--center">
+            <div class="cc__av cc__av--lg"><img src="./assets/images/bb98c7eb2ee17e1713dd3cbc3c6b0f69367d2b55.png" alt="Anwar"></div>
+            <div class="cc__info cc__info--center">
+              <div class="cc__name">Anwar</div>
+              <div class="cc__handle">@trainer_anwar</div>
+              <div class="cc__loc">Cape Town, ZA</div>
+            </div>
+          </div>
+          <div class="cc__stats">
+            <div class="stat"><span class="stat__v">350</span><span class="stat__l">followers</span></div>
+            <div class="stat stat--blue"><span class="stat__v">500</span><span class="stat__l">collectors rating</span></div>
+            <div class="stat"><span class="stat__v">50</span><span class="stat__l">following</span></div>
+          </div>
+          <div class="cc__items">
+            <div class="item"><span class="item__v">80</span><span class="item__l">ITEMS</span></div>
+            <div class="item"><span class="item__v">8</span><span class="item__l">COLLECTION</span></div>
+            <div class="item"><span class="item__v">0</span><span class="item__l">AUCTIONS</span></div>
+          </div>
+        </div>
+
+        <!-- Riley — back right -->
+        <div class="cc cc--right">
+          <div class="cc__top">
+            <div class="cc__av"><img src="./assets/images/d1e38b05d814b8f372718c7959e8f52265c728f2.png" alt="Riley"></div>
+            <div class="cc__info">
+              <div class="cc__name">Riley</div>
+              <div class="cc__handle">@raven_riley</div>
+              <div class="cc__loc">Johannesburg, ZA</div>
+            </div>
+          </div>
+          <div class="cc__stats">
+            <div class="stat"><span class="stat__v">200</span><span class="stat__l">followers</span></div>
+            <div class="stat stat--blue"><span class="stat__v">1,200</span><span class="stat__l">collectors rating</span></div>
+            <div class="stat"><span class="stat__v">200</span><span class="stat__l">following</span></div>
+          </div>
+          <div class="cc__items">
+            <div class="item"><span class="item__v">500</span><span class="item__l">ITEMS</span></div>
+            <div class="item"><span class="item__v">10</span><span class="item__l">COLLECTION</span></div>
+            <div class="item"><span class="item__v">2</span><span class="item__l">AUCTIONS</span></div>
+          </div>
+        </div>
+      </div><!-- /cc-stage -->
+    </div>
+
+    <!-- Right: Copy -->
+    <div class="trade__copy glass-card">
+      <h2 class="section-heading">Trade with<br>Collectors</h2>
+      <p class="section-body">Connect directly with other collectors to trade items. Exchange duplicates, negotiate fairly, and find the pieces you want without unnecessary barriers.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== BUY AND SELL ===================== -->
+<section class="buysell section" id="buy-sell">
+  <div class="buysell__inner wrap">
+	<img src="./assets/images/line.png" class="glow-line" />
+
+    <!-- Left: Copy -->
+    <div class="buysell__copy glass-card">
+      <h2 class="section-heading">Buy and Sell</h2>
+      <p class="section-body">List items quickly and connect with serious buyers and sellers. Set your price or negotiate within a secure, community-driven marketplace.</p>
+    </div>
+
+    <!-- Right: Cards -->
+    <div class="buysell__cards">
+      <div class="bs-card">
+        <div class="bs-card__label">Pokémon</div>
+        <div class="bs-card__img"><img src="./assets/images/65e24e055d11582a42860079d9c25e9d73e2437b.png" alt="Pokémon card"></div>
+      </div>
+      <div class="bs-card">
+        <div class="bs-card__label">Pokémon</div>
+        <div class="bs-card__img"><img src="./assets/images/cd137b02ed66a911498ed5ce8730a3fe051f38b2.png" alt="Pokémon card"></div>
+      </div>
+      <div class="bs-card">
+        <div class="bs-card__label">Pokémon</div>
+        <div class="bs-card__img"><img src="./assets/images/2716ae04ab8d6163763be84935457b4bcd863b21.png" alt="Pokémon card"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== COLLECTOR RATING ===================== -->
+<section class="cr-section section" id="features">
+  <div class="cr-section__inner wrap">
+
+    <!-- LEFT: Interactive collector rating visual -->
+    <div class="cr-visual">
+	  <img src="./assets/images/cr-visual-image.png" alt="CR Visual">
+	  
+      <div class="cr-compose" style="display:none;">
+
+        <!-- A) Profile Card -->
+        <div class="cr-profile">
+          <div class="cr-hex-bg"></div>
+          <div class="cr-profile__content">
+            <div class="cr-avatar">
+              <img src="./assets/images/bb98c7eb2ee17e1713dd3cbc3c6b0f69367d2b55.png" alt="Anwar">
+            </div>
+            <div class="cr-star">
+              <svg width="40" height="38" viewBox="0 0 40 38" fill="none">
+                <path d="M20 0l5.88 12.14L38.04 14.5l-9.02 8.54L31.18 36 20 30.14 8.82 36l2.16-12.96L2 14.5l12.12-2.36z" fill="#5abceb"/>
+              </svg>
+            </div>
+            <div class="cr-profile__name">Anwar</div>
+            <div class="cr-profile__handle">@trainer_anwar</div>
+            <div class="cr-profile__loc">Cape Town, ZA</div>
+            <div class="cr-stats-row">
+              <div class="cr-stat"><span class="cr-stat__v">350</span><span class="cr-stat__l">followers</span></div>
+              <div class="cr-stat-divider"></div>
+              <div class="cr-stat cr-stat--blue"><span class="cr-stat__v">500</span><span class="cr-stat__l">collectors rating</span></div>
+              <div class="cr-stat-divider"></div>
+              <div class="cr-stat"><span class="cr-stat__v">50</span><span class="cr-stat__l">following</span></div>
+            </div>
+            <div class="cr-items-row">
+              <div class="cr-item"><span class="cr-item__v">80</span><span class="cr-item__l">ITEMS</span></div>
+              <div class="cr-item"><span class="cr-item__v">8</span><span class="cr-item__l">COLLECTION</span></div>
+              <div class="cr-item"><span class="cr-item__v">0</span><span class="cr-item__l">AUCTIONS</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Small decorative circle at junction -->
+        <div class="cr-junction-dot"></div>
+
+        <!-- B) Extended Panels -->
+        <div class="cr-ext-upper">
+          <div class="cr-ext-col"><span class="cr-ext__v">120</span><span class="cr-ext__l">Upload Quality</span></div>
+          <div class="cr-ext-divider"></div>
+          <div class="cr-ext-col"><span class="cr-ext__v">95</span><span class="cr-ext__l">Activity Score</span></div>
+          <div class="cr-ext-divider"></div>
+          <div class="cr-ext-col"><span class="cr-ext__v">85</span><span class="cr-ext__l">Diversity</span></div>
+        </div>
+
+        <!-- C) Connector line -->
+        <div class="cr-connector"></div>
+
+        <!-- D) Score Display -->
+        <div class="cr-score-display">
+          <div class="cr-ext-lower">
+            <span class="cr-score-label">Veteran</span>
+            <span class="cr-score-number">500</span>
+            <span class="cr-score-sub">out of 1,000 points</span>
+            <div class="cr-progress">
+              <span class="cr-progress__min">0</span>
+              <div class="cr-progress__track">
+                <div class="cr-progress__fill"></div>
+              </div>
+              <span class="cr-progress__max">1,000</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- RIGHT: Copy card -->
+    <div class="cr-info">
+      <div class="cr-safety-badge">Added safety</div>
+      <h2 class="section-heading cr-heading">Collector<br>Rating</h2>
+      <p class="cr-body-text">Your rating reflects your activity, quality, and engagement. Your score is based on: Upload frequency and quality, Activity within the app and community, Diversity of your collection. Collectors are ranked based on total points, creating a clear and competitive leaderboard.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== LIVE AUCTIONS ===================== -->
+<section class="auctions section" id="auctions">
+  <div class="auctions__inner wrap">
+
+    <!-- Left: Copy -->
+    <div class="auctions__copy glass-card">
+      <h2 class="section-heading">Live<br>Auctions</h2>
+      <p class="section-body">Join real-time auctions where every collector has an equal chance to bid. Compete fairly for rare cards and collectibles and add them to your collection as they become available.</p>
+    </div>
+
+    <!-- Right: 3 auction cards side by side -->
+    <div class="auction-cards">
+      <div class="ac">
+        <div class="ac__img"><img src="./assets/images/748e6f6550be2f5a4aa15bfedf3a4c6b347fef4d.png" alt="Boba Fett's Armour"></div>
+        <div class="ac__body">
+          <div class="ac__timer-row">
+            <span class="ac__timer">⏱ 21h 12m</span>
+            <span class="ac__bids">5 BIDS</span>
+          </div>
+		  <div class="ac__info">
+			  <div class="ac__name">Boba Fett's Armour</div>
+			  <div class="ac__meta">
+				<span class="ac__grade">SEALED</span>
+				<span class="ac__qty">x2</span>
+				<span class="ac__price">R 500</span>
+			  </div>
+			  <div class="ac__seller">
+				<img src="./assets/images/d1e38b05d814b8f372718c7959e8f52265c728f2.png" alt="Riley" class="ac__sav">
+				<div class="ac__sinfo">
+				  <span class="ac__sname">Riley</span>
+				  <span class="ac__sloc"><span class="ac__cr">89 CR</span>&bull; Johannesburg, ZA</span>
+				</div>
+			  </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ac">
+        <div class="ac__img"><img src="./assets/images/005ec128d849ab8b56ad2443c007b6f57221dabc.png" alt="Dash, Database"></div>
+        <div class="ac__body">
+          <div class="ac__timer-row">
+            <span class="ac__timer">⏱ 15h 2m</span>
+            <span class="ac__bids">3 BIDS</span>
+          </div>
+		  <div class="ac__info">
+			  <div class="ac__name">Dash, Database</div>
+			  <div class="ac__meta">
+				<span class="ac__grade">SEALED</span>
+				<span class="ac__qty">x1</span>
+				<span class="ac__price">R 1,500</span>
+			  </div>
+			  <div class="ac__seller">
+				<img src="./assets/images/d1e38b05d814b8f372718c7959e8f52265c728f2.png" alt="Riley" class="ac__sav">
+				<div class="ac__sinfo">
+				  <span class="ac__sname">Riley</span>
+				  <span class="ac__sloc"><span class="ac__cr">111 CR</span>&bull; Johannesburg, ZA</span>
+				</div>
+			  </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ac">
+        <div class="ac__img"><img src="./assets/images/cd137b02ed66a911498ed5ce8730a3fe051f38b2.png" alt="Pikachu VMAX Japanese"></div>
+        <div class="ac__body">
+          <div class="ac__timer-row">
+            <span class="ac__timer">⏱ 5h 45m</span>
+            <span class="ac__bids">8 BIDS</span>
+          </div>
+		  <div class="ac__info">
+			  <div class="ac__name">Pikachu Japanese</div>
+			  <div class="ac__meta">
+				<span class="ac__grade">SEALED</span>
+				<span class="ac__qty">x2</span>
+				<span class="ac__price">R 2,500</span>
+			  </div>
+			  <div class="ac__seller">
+				<img src="./assets/images/d1e38b05d814b8f372718c7959e8f52265c728f2.png" alt="Riley" class="ac__sav">
+				<div class="ac__sinfo">
+				  <span class="ac__sname">Riley</span>
+				  <span class="ac__sloc"><span class="ac__cr">78 <span class="ac__cr_small">CR</span></span>&bull; Johannesburg, ZA</span>
+				</div>
+			  </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /auction-cards -->
+
+  </div>
+</section>
+
+<!-- ===================== COLLECTIONS ===================== -->
+<section class="collections section" id="collections">
+  <div class="collections__inner wrap">
+
+    <!-- Grid of card rows -->
+    <div class="col-rows">
+      <div class="col-row">
+        <div class="col-label col-label--pokemon">Pokémon</div>
+        <div class="col-cards">
+          <div class="col-card"><img src="./assets/images/8e89b47ab8c1bcf9610908c2808dfe577552b427.png" alt="Pokémon card"></div>
+          <div class="col-card"><img src="./assets/images/53c44a0eb07161feaf91969edc7376e69930300f.png" alt="Pokémon card"></div>
+          <div class="col-card"><img src="./assets/images/65e24e055d11582a42860079d9c25e9d73e2437b.png" alt="Pokémon card"></div>
+        </div>
+      </div>
+
+      <div class="col-row">
+        <div class="col-label col-label--onepiece">One Piece</div>
+        <div class="col-cards">
+          <div class="col-card"><img src="./assets/images/e471758b1dca5dcec4fd812c0432311ff6c61af6.png" alt="One Piece card"></div>
+          <div class="col-card"><img src="./assets/images/6aa6a800024cee46710bd53eceadcc84ae1401bd.png" alt="One Piece card"></div>
+          <div class="col-card"><img src="./assets/images/a278d6630fe52b648de2477f53d381e1a5541b63.png" alt="One Piece card"></div>
+        </div>
+      </div>
+
+      <div class="col-row">
+        <div class="col-label col-label--dbs">Dragon Ball Super</div>
+        <div class="col-cards">
+          <div class="col-card"><img src="./assets/images/51644a043c582993bc388ae9966792cfe2377a74.png" alt="Dragon Ball Super card"></div>
+          <div class="col-card"><img src="./assets/images/1473acf9caa0b2ee864f0fd4320f862b24e82115.png" alt="Dragon Ball Super card"></div>
+          <div class="col-card"><img src="./assets/images/81772502c5cfc6d4bcbb21424a027647d300d526.png" alt="Dragon Ball Super card"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Floating copy card overlapping right side of grid -->
+    <div class="col-float-card glass-card">
+	  <h2 class="section-heading">Collections</h2>
+      <p class="col-overlay__p">Separate and organise your items into different collections with ease. Group by type, theme, or rarity to keep everything clear and easy to manage.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== BUY & SELL WITH CONFIDENCE ===================== -->
+<section class="confidence section" id="confidence">
+  <div class="confidence__inner wrap">
+
+    <!-- Left: Copy -->
+    <div class="confidence__copy glass-card">
+      <h2 class="section-heading section-heading--display"><strong>Buy &amp; Sell</strong> with<br>Confidence</h2>
+      <p class="section-body">List items quickly and connect with serious buyers and sellers. Set your price or negotiate within a secure, community-driven marketplace.</p>
+    </div>
+
+    <!-- Right: Brand logos -->
+    <div class="brand-grid">
+      <div class="brand"><img src="./assets/images/aac003efec43c23b2d1b98dd30c5b947856d005c.png" alt="Pokémon TCG"></div>
+      <div class="brand"><img src="./assets/images/6cae1f6fd1c3a76f1136b0c2cadc2fc2f5eaa7aa.png" alt="Magic the Gathering"></div>
+      <div class="brand"><img src="./assets/images/magic.png" alt="Yu-Gi-Oh!"></div>
+      <div class="brand"><img src="./assets/images/edfa3c3909f6b1de06eec12fc6819a016408fe90.png" alt="Dragon Ball Super Card Game"></div>
+      <div class="brand"><img src="./assets/images/a4808daaae97b47e0f7ca51f5e92e4557d3ef309.png" alt="DC"></div>
+      <div class="brand"><img src="./assets/images/b29818015f5c3976b9be64ec9601bd35b5e98df7.png" alt="Marvel Comics"></div>
+      <div class="brand"><img src="./assets/images/b7dba6479d9e2bcfcd6ea3b7778fdb6fa0bd89b0.png" alt="Digimon"></div>
+      <div class="brand"><img src="./assets/images/89ddb2a284e908bd38f7d28800bf145b6dd26f7e.png" alt="Lorcana"></div>
+      <div class="brand"><img src="./assets/images/e204dd89be6745192f3b96a10cc11295bc3bbb4a.png" alt="Star Wars"></div>
+      <div class="brand"><img src="./assets/images/89f42a738f103a494adc6194c4b1ef216c9b2d29.png" alt="One Piece skull"></div>
+      <div class="brand"><img src="./assets/images/e67d8b8291c691a34c039478abd14ffec1b864f5.png" alt="Flesh and Blood"></div>
+      <div class="brand brand--more"><span>+ many more</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== FEATURES AT A GLANCE ===================== -->
+<section class="features section" id="features-glance">
+  <div class="features__inner">
+    <h2 class="section-heading features__heading">Features at a<br>glance</h2>
+    <div class="swiper feat-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="feat glass-card">
+            <div class="feat__icon">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" stroke="#ffce33" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" stroke="#ffce33" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span>Personalised digital<br>collection tracker</span>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="feat glass-card">
+            <div class="feat__icon">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="#ffce33" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </div>
+            <span>Real-time trading<br>with collectors worldwide</span>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="feat glass-card">
+            <div class="feat__icon">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="21" r="1" fill="#ffce33"/><circle cx="20" cy="21" r="1" fill="#ffce33"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" stroke="#ffce33" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span>Secure buying and<br>selling marketplace</span>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="feat glass-card">
+            <div class="feat__icon">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#ffce33" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </div>
+            <span>Community chat and<br>trade negotiation tools</span>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="feat glass-card">
+            <div class="feat__icon">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke="#ffce33" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span>Wishlist and alerts<br>for must-have items</span>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="feat glass-card">
+            <div class="feat__icon">
+              <svg width="80" height="80" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="#ffce33" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4" stroke="#ffce33" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="#ffce33" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <span>Verified profiles<br>for safer exchanges</span>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination feat-pagination"></div>
+      <div class="swiper-button-prev feat-prev"></div>
+      <div class="swiper-button-next feat-next"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BUILT FOR PASSION ===================== -->
+<section class="passion section" id="testimonials">
+  <div class="wrap">
+
+    <!-- Top: Full-width dark card with copy left + phone right -->
+    <div class="passion__top glass-card">
+      <div class="passion__top-inner">
+        <div class="passion__copy">
+          <h2 class="passion__heading"><strong>Built for passion</strong><br>Designed for connection</h2>
+          <p class="passion__body">Download now and join a growing community of collectors who trade, connect, and discover — together.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom: 3 testimonial cards in a row -->
+    <div class="testimonials">
+      <blockquote class="testi glass-card">
+        <div class="testi__stars">★★★★★</div>
+        <p class="testi__quote">"Awesome app for buying and selling"</p>
+        <cite class="testi__author">H. Sterling</cite>
+      </blockquote>
+      <blockquote class="testi glass-card">
+        <div class="testi__stars">★★★★★</div>
+        <p class="testi__quote">"Definitely recommending this app to my D&amp;D crew"</p>
+        <cite class="testi__author">L. Thomas</cite>
+      </blockquote>
+      <blockquote class="testi glass-card">
+        <div class="testi__stars">★★★★★</div>
+        <p class="testi__quote">"Takes the fear factor away from buying singles"</p>
+        <cite class="testi__author">S. Naidoo</cite>
+      </blockquote>
+		<img src="./assets/images/phone-browse.png" alt="Marketplace app" class="passion__phonescreenshot">
+        <div class="passion__phone">
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== DOWNLOAD CTA ===================== -->
+<section class="download-cta" id="contact">
+  <div class="download-cta__bg">
+    <img src="./assets/images/c6b3890fb2b3d8aae60a2aa8a3e555698332e8bc.png" alt="" aria-hidden="true">
+  </div>
+  <div class="download-cta__inner">
+    <div class="download-cta__card glass-card">
+      <h2 class="download-cta__heading">UNLOCK YOUR COLLECTING<br>POTENTIAL. <span>DOWNLOAD TODAY!</span></h2>
+      <div class="badge-row badge-row--center">
+        <a href="https://apps.apple.com/za/app/undercity/id6760612279" class="badge"><img src="./assets/images/playstore-badge.png" alt="Google Play"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.undercity.app&hl=en_ZA" class="badge"><img src="./assets/images/appstore-badge.png" alt="App Store"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer" id="faq">
+  <div class="site-footer__main wrap">
+    <div class="site-footer__left">
+     <img src="./assets/images/logo.png" alt="Undercity" class="logo-img">
+      <div class="badge-row">
+        <a href="https://apps.apple.com/za/app/undercity/id6760612279" class="badge badge--sm"><img src="./assets/images/playstore-badge.png" alt="Google Play"></a>
+        <a href="https://play.google.com/store/apps/details?id=com.undercity.app&hl=en_ZA" class="badge badge--sm"><img src="./assets/images/appstore-badge.png" alt="App Store"></a>
+      </div>
+    </div>
+    <div class="site-footer__social">
+      <a href="https://www.instagram.com/undercitytrading?igsh=MWh2ems3bW9oY3o3ZQ==" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Instagram">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white"/></svg>
+      </a>
+    </div>
+  </div>
+  <div class="site-footer__copy">
+    <p>Copyright &copy; <strong>Undercity</strong>. Designed By <strong>DarkMatter</strong>. A Creative Communications Agency</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./script.js"></script>
+</body>
+</html>
