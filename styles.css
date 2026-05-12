@@ -212,7 +212,7 @@ strong { font-weight:800; }
   }
 }
 
-.logo-img { height:50px; width:auto; }
+.logo-img { height:50px; width:auto; max-width: max-content; }
 
 .site-header__nav { display:none; gap:28px; align-items:center; }
 
@@ -231,7 +231,7 @@ strong { font-weight:800; }
 .mobile-nav a { padding:12px 0; font-weight:600; font-size:15px; border-bottom:1px solid var(--border); }
 .mobile-nav a:hover { color:var(--gold); }
 
-/* =============================================
+/* =================================== ==========
    HERO
    ============================================= */
 .hero { position:relative; min-height:100svh; display:flex; align-items:center; overflow:visible; padding-top:80px; z-index:2; }
