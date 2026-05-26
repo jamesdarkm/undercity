@@ -889,12 +889,13 @@ strong { font-weight:800; }
 /* Give the swiper room for the nav arrows */
 .feat-swiper {
   padding-bottom: 52px !important; /* space for pagination */
-  padding-left: 4px;
+  padding-left: 24px;
   padding-right: 4px;
 }
 
 /* Each card fills the slide */
 .swiper-slide { width: 350px; }
+.feat-swiper { padding-left: 24px;  padding-right: 24px;}
 .feat-swiper .swiper-slide, .swiper-wrapper { height: auto; }
 .feat {
   display:flex; flex-direction:column; align-items:center; justify-content:center;
@@ -949,7 +950,7 @@ strong { font-weight:800; }
 
 /* Desktop: show all feature cards in a single grid (no slider) */
 @media (min-width: 768px) {
-  .feat-swiper { padding-bottom: 0 !important; padding-left: 0; padding-right: 0; }
+  .feat-swiper { padding-bottom: 0 !important; padding-left: 24px; padding-right: 24px; }
   .feat-swiper .swiper-wrapper {
     display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -1057,6 +1058,14 @@ strong { font-weight:800; }
 .site-footer__copy { border-top:1px solid var(--border); padding-block:16px; text-align:center; color:#1F2139; background:#F9FAFF }
 /* Figma: 14px Gotham — fallback to Montserrat */
 .site-footer__copy p { font-size:12px; color:#1F2139; line-height:1.5; }
+
+@media (max-width: 639px) {
+  .site-footer__main { justify-content:center; text-align:center; }
+  .site-footer__left { align-items:center; }
+  .site-footer__left .badge-row { justify-content:center; }
+
+  .auction-cards .ac:nth-child(n+2) { display:none; }
+}
 
 /* =============================================
    TABLET 640px+
